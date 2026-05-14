@@ -8,7 +8,7 @@ type SearchBarProps = {
 };
 
 const modeLabel: Record<SearchMode, string> = {
-  apellido: "Buscando por apellido",
+  apellido: "Buscando por apellido y nombre",
   dni: "Buscando por DNI"
 };
 
@@ -25,15 +25,16 @@ export function SearchBar({ query, mode, onChange, disabled }: SearchBarProps) {
           type="search"
           inputMode="search"
           autoComplete="off"
-          placeholder="Escribí un apellido o DNI"
+          placeholder="Buscá por apellido y nombre, o DNI"
           value={query}
           onChange={(event) => onChange(event.target.value)}
           disabled={disabled}
         />
       </div>
       <p className="search-help">
-        Si escribís números, la búsqueda será por DNI. Si escribís texto, será
-        por apellido.
+        Si escribís números, la búsqueda será por DNI. Si escribís texto, se
+        buscará en apellido y nombre, incluso con varias palabras y en
+        cualquier orden.
       </p>
       {mode ? <p className="search-mode">{modeLabel[mode]}</p> : null}
     </section>

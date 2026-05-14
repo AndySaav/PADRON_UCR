@@ -55,11 +55,11 @@ function App() {
       <main className="app-container">
         <section className="hero">
           <p className="hero-eyebrow">Padrón UCR</p>
-          <h1>Consulta rápida por apellido o DNI</h1>
+          <h1>Consulta rápida por apellido, nombre o DNI</h1>
           <p className="hero-description">
             Buscá afiliados desde el celular con un único campo. Si ingresás
             números, la búsqueda se hace por DNI. Si ingresás texto, se hace
-            solo por apellido.
+            sobre la combinación de apellido y nombre.
           </p>
         </section>
 
@@ -87,7 +87,7 @@ function App() {
         {!loading && !error && !query.trim() ? (
           <EmptyState
             title="Empezá a buscar"
-            description="Ingresá un apellido o un DNI para ver los resultados en tarjetas."
+            description="Ingresá apellido y nombre, o un DNI, para ver los resultados en tarjetas."
           />
         ) : null}
 

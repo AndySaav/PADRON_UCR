@@ -30,8 +30,12 @@ export function searchPadron(records: PadronRecord[], query: string): PadronReco
     return records.filter((record) => record.dni.includes(dniQuery));
   }
 
-  const apellidoQuery = normalizeText(trimmedQuery);
-  return records.filter((record) =>
-    normalizeText(record.apellido).includes(apellidoQuery)
-  );
+  const searchTerms = normalizeText(trimmedQuery)
+    .split(/\s+/)
+    .filter(Boolean);
+
+  return records.filter((record) => {
+    const fullName = normalizeText(`${record.apellido} ${record.nombre}`);
+    return searchTerms.every((term) => fullName.includes(term));
+  });
 }

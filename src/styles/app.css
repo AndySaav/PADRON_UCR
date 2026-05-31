@@ -186,12 +186,33 @@ input {
   margin-bottom: 16px;
 }
 
+.card-heading {
+  min-width: 0;
+}
+
 .card-kicker {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   color: #f5b0b2;
   text-transform: uppercase;
   letter-spacing: 0.16em;
   font-size: 0.75rem;
+}
+
+.jr-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  margin-top: 10px;
+  padding: 6px 12px;
+  border: 1px solid rgba(240, 54, 60, 0.34);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+  color: #ffd9da;
+  font-weight: 800;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .card-name {

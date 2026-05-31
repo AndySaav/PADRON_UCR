@@ -10,6 +10,13 @@ export type RawPadronRow = {
   Domicilio?: string;
 };
 
+export type RawJuventudRow = {
+  Matrícula?: string;
+  Matricula?: string;
+  MATRICULA?: string;
+  DNI?: string;
+};
+
 export type PadronRecord = {
   id: string;
   apellido: string;
@@ -19,6 +26,7 @@ export type PadronRecord = {
   localidad: string;
   fechaAfiliacion: string;
   fechaAfiliacionDate: Date | null;
+  esJuventudRadical: boolean;
 };
 
 export type SearchMode = "dni" | "apellido";

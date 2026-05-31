@@ -9,11 +9,16 @@ export function ResultCard({ record }: ResultCardProps) {
   return (
     <article className="result-card">
       <header className="card-header">
-        <div>
+        <div className="card-heading">
           <p className="card-kicker">Afiliado</p>
           <h2 className="card-name">
             {record.apellido}, {record.nombre}
           </h2>
+          {record.esJuventudRadical ? (
+            <span className="jr-badge" aria-label="Juventud Radical">
+              Juventud Radical
+            </span>
+          ) : null}
         </div>
         <span className="dni-badge">DNI {record.dni || "Sin dato"}</span>
       </header>
